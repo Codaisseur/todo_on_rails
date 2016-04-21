@@ -1,0 +1,4 @@
+<li class="todo<%= todo.completed? ? " completed" : "" %>" data-id="<%= todo.id %>">
+  <input name="todo[<%= todo.id %>]" id="todo-<%= todo.id %>" type="checkbox" value="1" <%= todo.completed? ? 'checked="checked"' : '' %>>
+  <label for="todo-<%= todo.id %>"><%= todo.title %></label>
+</li>

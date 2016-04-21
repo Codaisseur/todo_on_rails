@@ -1,29 +1,15 @@
-<p id="notice"><%= notice %></p>
+<h1>TodoList</h1>
+<center id="notice"><%= notice %></center>
 
-<h1>Listing Todos</h1>
+<%= render "form" %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Completed</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<ul id="todolist">
+  <%= render @todos %>
+</ul>
 
-  <tbody>
-    <% @todos.each do |todo| %>
-      <tr>
-        <td><%= todo.title %></td>
-        <td><%= todo.completed %></td>
-        <td><%= link_to 'Show', todo %></td>
-        <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
-        <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Todo', new_todo_path %>
+<div class="footer">
+  Todo: <span id="todo-count">1</span> •
+  Done: <span id="completed-count">0</span> •
+  Total: <span id="total-count">1</span> •
+  <a href="#" id="clean-up">Clean up</a>
+</div>
