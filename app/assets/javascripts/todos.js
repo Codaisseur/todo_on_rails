@@ -1,6 +1,30 @@
 function toggleDone() {
-  $(this).parent().toggleClass("completed");
-  updateCounters();
+  var checkbox = this;
+  var listItem = $(checkbox).parent();
+
+  var todoId = listItem.data('id');
+  var isCompleted = !listItem.hasClass("completed");
+
+  $.ajax({
+    type: "PUT",
+    url: "/todos/" + todoId + ".json",
+    data: JSON.stringify({
+      todo: { completed: isCompleted }
+    }),
+    contentType: "application/json",
+    dataType: "json"})
+
+    .done(function(data) {
+      console.log(data);
+
+      if (data.completed) {
+        listItem.addClass("completed");
+      } else {
+        listItem.removeClass("completed");
+      }
+
+      updateCounters();
+    });
 }
 
 function updateCounters() {
