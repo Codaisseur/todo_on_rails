@@ -15,6 +15,23 @@ body {
 
   form {
     padding: 0 0 20px;
+
+    input.error {
+      border: 1px solid #f00;
+    }
+
+    small.error {
+      font-size: 12px;
+      color: #f00;
+      font-style: italic;
+
+      &::before {
+        content: ">";
+        font-weight: bolder;
+        padding: 0 3px;
+        color: #999;
+      }
+    }
   }
 
   input[type=text] {
