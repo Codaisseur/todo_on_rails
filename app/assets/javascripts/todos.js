@@ -14,6 +14,11 @@ function toggleDone() {
     contentType: "application/json",
     dataType: "json"})
 
+    .fail(function(error) {
+      console.log(error);
+      alert("Uh oh! Could not change the completed state of this todo!");
+    })
+
     .done(function(data) {
       console.log(data);
 
