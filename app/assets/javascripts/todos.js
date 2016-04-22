@@ -135,7 +135,7 @@ function deleteTodo(todoId) {
 
 $(document).ready(function() {
   $("input[type=checkbox]").bind('change', toggleDone);
-  $("form").bind('submit', submitTodo);
+  $("form#new_todo").bind('submit', submitTodo);
   $("#clean-up").bind('click', cleanUpDoneTodos);
   updateCounters();
 });
