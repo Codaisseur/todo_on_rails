@@ -13,6 +13,12 @@ Rails.application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
+  # Per form CSRF tokens
+  config.action_controller.per_form_csrf_tokens = true
+
+  # Forgery Protection with Origin Check
+  config.action_controller.forgery_protection_origin_check = true
+
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 

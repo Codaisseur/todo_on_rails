@@ -31,5 +31,9 @@ module TodosOnRails
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # belongs_to will trigger a validation error by default if the association
+    # is not present.
+    config.active_record.belongs_to_required_by_default = true
   end
 end
